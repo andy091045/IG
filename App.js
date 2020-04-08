@@ -30,7 +30,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer ref={navigationRef}>
+    <NavigationContainer ref={navigationRef} >
       <Stack.Navigator>
         {/* <Stack.Screen name="HomeHeader" component={AlbumScreen}
           options={{
@@ -78,11 +78,11 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+
   headerStyle: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    // justifyContent: 'center',
   },
   hr: {
     flexDirection: 'row',
@@ -91,18 +91,15 @@ const styles = StyleSheet.create({
     height: 35,
     width: 35,
     left: 8,
-    // marginRight: 80,
   },
   planeIconStyle: {
     height: 35,
     width: 35,
-
     right: 8,
   },
   igStyle: {
     height: 30,
     width: 110,
-
   },
   film: {
     width: 25,
