@@ -1,22 +1,23 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import React from "react";
+import { View, FlatList } from "react-native";
+// import Header from "../components/Header";
+import AlbumDetail from "../components/AlbumDetail";
+import albumData from "../json/albums.json";
 
 const AlbumScreen = ({ navigation }) => {
     return (
-        <View style={styles.container}>
-            <Text>Album Screen</Text>
+        <View style={{ flex: 1 }}>
+            <FlatList
+                data={albumData.albumList}
+                renderItem={({ item }) =>
+                    <AlbumDetail
+                        album={item}
+                        navigation={navigation}
+                    />}
+                keyExtractor={item => item.title}
+            />
         </View>
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
-
-export default AlbumScreen
+export default AlbumScreen;
